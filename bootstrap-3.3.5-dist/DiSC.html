@@ -1,0 +1,147 @@
+﻿
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>DiSC</title>
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+	<div class="container">
+	<h1>DiSC分析へようこそ</h1>
+	<p>質問に答えた結果から、あなたを分析します(V)o￥o(V)</p>
+	<p>直感を大事にしてください</p>
+	<hr>
+	<p>4つの言葉の中から、自分に”最もあてはまる（最適）”ものを１つ、”最もあてはまらない（不適）”ものを１つ選んでください。</p> 
+	<h2><div id="questionNum"></div></h2>
+	<div id="text_s"></div>
+
+<script type="text/javascript">
+//問題と解答
+qa = new Array();
+qa[0] = ["穏やか","説得力がある","謙虚","独創的",'S','i','C','D','S','i','C','D'];
+qa[1] = ["魅力的","内省的","頑固","愛想がよい",'i','C','D','S','i','C','D','S'];
+qa[2] = ["言いなり","大胆","誠実","人を引きつける",'C','D','S','i','C','D','S','i'];
+qa[3] = ["自由な気風","分析的","強固な意志","人当たりがよい",'i','C','D','S','i','C','D','S'];
+qa[4] = ["陽気","几帳面","厚かましい","温和",'i','C','D','S','i','C','D','S'];
+qa[5] = ["競争的","思いやりがある","明朗","調和をはかる",'D','S','i','C','D','S','i','C'];
+qa[6] = ["批判的","従順","屈しない","人を楽しませる",'C','S','D','i','C','S','D','i'];
+qa[7] = ["勇敢","影響力がある","服従的","臆病",'D','i','S','C','D','i','S','C'];
+qa[8] = ["社交的","勤勉","独立独歩","もの静か",'i','S','D','C','i','N','D','C'];
+qa[9] = ["冒険心に富む","敏感","親しみを表す","かたよらず常識的",'D','C','i','S','D','C','i','S'];
+qa[10] = ["話好き","自制心がある","伝統を重んじる","決断力がある",'i','S','C','D','i','S','C','D'];
+qa[11] = ["目立つ","大胆不敵","礼儀を重んじる","満足感がある",'i','D','C','N','i','D','C','S'];
+qa[12] = ["挑戦的","外交的","友好的","心配性",'D','i','S','C','D','i','S','C'];
+qa[13] = ["慎重","決意が固い","人を納得させる","温厚",'C','D','i','S','C','D','i','S'];
+qa[14] = ["人を受け入れる","意欲的","協調性","活発",'S','D','C','i','S','D','C','i'];
+qa[15] = ["自信","同情","忍耐","自己主張",'i','S','C','D','i','S','C','D'];
+qa[16] = ["規則正しい","寛大","活気がある","強引",'C','S','i','D'];
+qa[17] = ["称賛される","親切","忍従","我が強い",'i','S','C','D','i','S','C','D'];
+qa[18] = ["人を敬う","開拓者精神","情熱的","人に好意的",'C','D','i','S','C','D','i','S'];
+qa[19] = ["議論好き","順応性","あきらめがいい","快活",'D','C','S','i','D','C','S','i'];
+qa[20] = ["表現が豊か","中立を好む","確信がある","平静",'i','S','D','C','i','S','D','C'];
+qa[21] = ["交際上手","教養がある","精力的","情がある",'i','C','D','S','i','C','D','S'];
+qa[22] = ["気さく","正確","率直","抑制",'i','C','D','S','i','C','D','S'];
+qa[23] = ["せっかち","協力的","人気がある","献身的",'D','S','i','C','D','S','i','C'];
+
+
+
+//初期設定
+q_sel = 4; //選択肢の数
+
+setReady();
+
+//初期設定
+function setReady() {
+	count = 0; //問題番号
+	ansers = new Array(); //解答記録
+	dCount = 0;
+	iCount = 0;
+	sCount = 0;
+	cCount = 0;
+	//最初の問題
+	quiz();
+}
+
+//問題表示
+function quiz() {
+	var s, n;
+	//問題数
+	document.getElementById("questionNum").innerHTML = (count + 1) + "問 / 24問中";
+	//選択肢
+	s = "<table class='table'><tr><th></th><th>最適</th><th>不適</th></tr>";
+	for (n = 0; n < q_sel; n++) {
+		s += "<tr><td>" + qa[count][n] + "</td>";
+		s += '<td><input type="radio" name="suit" value="' + qa[count][q_sel + n] + '"></td>';
+		s += '<td><input type="radio" name="notSuit" value="' + qa[count][q_sel + 4 + n] + '"></td></tr>';
+	}
+	s += "</table>";
+	s += "<a class='btn btn-primary pull-right' href='javascript:answer()'>次へ</a>";
+	document.getElementById("text_s").innerHTML = s;
+}
+
+//解答表示
+function answer() {
+	var s;
+	var i;
+	var suitType = "";
+	var notSuitType = "";
+
+	radios = document.getElementsByName("suit");
+	for (i = 0; i < radios.length; i++) {
+		if (radios[i].checked) {
+			suitType = radios[i].value;
+		}
+	}
+	radios = document.getElementsByName("notSuit");
+	for (i = 0; i < radios.length; i++) {
+		if (radios[i].checked) {
+			notSuitType = radios[i].value;
+		}
+	}
+	//s = "最適：" + suitType + "\t不適：" + notSuitType;
+	//document.getElementById("text_a").innerHTML = s;
+	if (suitType == 'D') {
+		dCount++;
+	} else if (suitType == 'i') {
+		iCount++;
+	} else if (suitType == 'S') {
+		sCount++;
+	} else if (suitType == 'C') {
+		cCount++;
+	}
+	if (notSuitType == 'D') {
+		dCount--;
+	} else if (notSuitType == 'i') {
+		iCount--;
+	} else if (notSuitType == 'S') {
+		sCount--;
+	} else if (notSuitType == 'C') {
+		cCount--;
+	}
+
+	//次の問題を表示
+	count++;
+	if (count < qa.length) {
+		quiz();
+	} else {
+		//終了
+		document.getElementById("questionNum").innerHTML = "お疲れ様でした('-^)"
+		s = "";
+		s += "<h2>集計結果</h2>";
+		s += "<table class='table'><tr><th>D</th><th>i</th><th>S</th><th>C</th></tr>"
+		s += "<tr><td>" + dCount + "</td><td>" + iCount + "</td><td>" + sCount +"</td><td>" + cCount + "</td></tr>"
+		s += "<a class='btn btn-primary' href='javascript:setReady()'>最初から</a>";
+		document.getElementById("text_s").innerHTML = s;
+	}
+}
+</script>
+</div>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+</body>
+</html>
