@@ -42,7 +42,7 @@
           <li><a href="access.html">アクセス</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="#"><i class="fa fa-home fa-lg fa-fw" aria-hidden="true"></i>岐阜県多治見市金岡町2-104-1</a></li>
+          <li><a href="#"><i class="fa fa-home fa-lg fa-fw" aria-hidden="true"></i>多治見市金岡町2-104-1</a></li>
           <li><a href="tel:0572-25-3612"><i class="fa fa-phone-square fa-lg fa-fw" aria-hidden="true"></i>0572-25-3612</a></li>
         </ul>
       </div>
@@ -83,11 +83,11 @@
     </a>
   </div>
 
-  <div class="container">
+  <div class="container index-container">
     <div class="row">
-      <div class="col-sm-8">
-        <h3>診療日</h3>
-        <table class="table table-bordered">
+      <div class="col-sm-8 col-container">
+        <h3 class="subtitle">診療日</h3>
+        <table class="table table-bordered business-day">
           <thead>
             <tr>
               <th>月</th>
@@ -96,25 +96,25 @@
               <th>木</th>
               <th>金</th>
               <th class="info">土</th>
-              <th class="danger">日</th>
+              <th class="danger">日・祝</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td>○</td>
-              <td>○</td>
-              <td>○</td>
-              <td>×</td>
-              <td>○</td>
-              <td>○</td>
-              <td>×</td>
+              <td class="ok">○</td>
+              <td class="ok">○</td>
+              <td class="ok">○</td>
+              <td></td>
+              <td class="ok">○</td>
+              <td class="ok">○</td>
+              <td></td>
             </tr>
           </tbody>
         </table>
       </div>
-      <div class="col-sm-4">
-        <h3>診療時間</h3>
-        <table class="table table-bordered">
+      <div class="col-sm-4 col-container">
+        <h3 class="subtitle">診療時間</h3>
+        <table class="table table-bordered business-hour">
           <tr>
             <th>午前</th>
             <td>9:00～12:00</td>
@@ -124,6 +124,11 @@
             <td>14:00～19:00</td>
           </tr>
         </table>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12">
+        <h3>診療内容</h3>
       </div>
     </div>
   </div>
