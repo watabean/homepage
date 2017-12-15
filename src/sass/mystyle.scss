@@ -1,0 +1,67 @@
+body { padding-top: 50px; }
+
+.navbar-header a {
+    font-size: 1.2em;
+}
+
+.ggmap {
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 30px;
+    height: 0;
+    overflow: hidden;
+}
+ 
+.ggmap iframe,
+.ggmap object,
+.ggmap embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.business-hour th,
+.business-hour td {
+    text-align: center;
+}
+
+.business-hour th {
+    background-color: lightyellow;
+}
+
+.business-day th,
+.business-day td {
+    text-align: center;
+}
+
+.business-day td:empty {
+    background-color: lightgrey;
+}
+
+.ok {
+    font-size: 2em;
+}
+
+.business-day {
+    table-layout: fixed;
+}
+
+.business-day th {
+    background-color: lightyellow;
+    width: 40px;
+}
+
+.subtitle {
+    background: linear-gradient(transparent 70%, #a7d6ff 70%);
+}
+
+/* .col-container {
+    border: solid 3px #364e96; 線色
+    border-radius: 0.5em; 角丸
+} */
+
+.index-container {
+    margin-top: 30px;
+}
