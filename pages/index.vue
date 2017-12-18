@@ -1,6 +1,6 @@
 <template>
 <div>
-  <Header></Header>
+  <pageHeader></pageHeader>
   <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
     <!-- Indicators -->
     <ol class="carousel-indicators">
@@ -94,11 +94,11 @@
 
 <script>
 import Logo from '~/components/Logo.vue'
-import Header from '~/components/Header.vue'
+import PageHeader from '~/components/PageHeader.vue'
 export default {
   components: {
     Logo,
-    Header
+    PageHeader
   }
 }
 </script>
