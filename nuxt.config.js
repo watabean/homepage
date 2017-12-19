@@ -47,7 +47,7 @@ module.exports = {
     ]
   },
   // include bootstrap css
-  css: ['bootstrap/dist/css/bootstrap.css'],
+  css: ['bootstrap/dist/css/bootstrap.css', 'font-awesome/css/font-awesome.css'],
   // include bootstrap js on startup
   plugins: ['~plugins/bootstrap.js']
 }
