@@ -64,25 +64,50 @@ export default {
 }
 </script>
 
-<style>
-.title {
-  font-family: "Quicksand", "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; /* 1 */
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
+<style lang="scss" scoped>
+.business-hour {
+  th, td {
+    text-align: center;
+  }
+  th {
+    background-color: lightyellow;
+  }
+}
+
+.business-day {
+  th {
+    text-align: center;
+  }
+  td {
+    text-align: center;
+    &:empty {
+      background-color: lightgrey;
+    }
+  }
+}
+
+.ok {
+  font-size: 2em;
+}
+
+.business-day {
+  table-layout: fixed;
+  th {
+    background-color: lightyellow;
+    width: 40px;
+  }
 }
 
 .subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
+  background: linear-gradient(transparent 70%, #a7d6ff 70%);
 }
 
-.links {
-  padding-top: 15px;
+/* .col-container {
+    border: solid 3px #364e96; 線色
+    border-radius: 0.5em; 角丸
+} */
+
+.index-container {
+  margin-top: 30px;
 }
 </style>

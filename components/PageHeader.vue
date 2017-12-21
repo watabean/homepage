@@ -26,3 +26,9 @@
     </div>
   </nav>
 </template>
+
+<style lang="scss" scoped>
+.navbar-header a {
+  font-size: 1.2em;
+}
+</style>
