@@ -30,19 +30,21 @@
             </tbody>
           </table>
         </div>
-        <!-- <div class="col-sm-4 col-container">
+        <div class="col-sm-4 col-container">
           <h3 class="subtitle">診療時間</h3>
           <table class="table table-bordered business-hour">
-            <tr>
-              <th>午前</th>
-              <td>9:00～12:00</td>
-            </tr>
-            <tr>
-              <th>午後</th>
-              <td>14:00～19:00</td>
-            </tr>
+            <thead>
+              <tr>
+                <th>午前</th>
+                <td>9:00～12:00</td>
+              </tr>
+              <tr>
+                <th>午後</th>
+                <td>14:00～19:00</td>
+              </tr>
+            </thead>
           </table>
-        </div> -->
+        </div>
       </div>
       <div class="row">
         <div class="col-sm-12">

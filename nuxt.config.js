@@ -36,7 +36,7 @@ module.exports = {
         })
       }
     },
-    vendor: ['jquery', 'bootstrap'],
+    vendor: ['jquery', 'bootstrap', 'element-ui'],
     plugins: [
       // set shortcuts as global for bootstrap
       new webpack.ProvidePlugin({
@@ -47,7 +47,14 @@ module.exports = {
     ]
   },
   // include bootstrap css
-  css: ['bootstrap/dist/css/bootstrap.css', 'font-awesome/css/font-awesome.css'],
+  css: [
+    'bootstrap/dist/css/bootstrap.css',
+    'font-awesome/css/font-awesome.css',
+    'element-ui/lib/theme-chalk/index.css'
+  ],
   // include bootstrap js on startup
-  plugins: ['~plugins/bootstrap.js']
+  plugins: [
+    '~plugins/bootstrap.js',
+    '~plugins/element-ui'
+  ]
 }
