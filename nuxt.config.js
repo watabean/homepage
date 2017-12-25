@@ -50,7 +50,8 @@ module.exports = {
   css: [
     'bootstrap/dist/css/bootstrap.css',
     'font-awesome/css/font-awesome.css',
-    'element-ui/lib/theme-chalk/index.css'
+    'element-ui/lib/theme-chalk/index.css',
+    '~/css/main.css'
   ],
   // include bootstrap js on startup
   plugins: [
