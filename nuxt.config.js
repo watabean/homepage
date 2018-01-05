@@ -19,6 +19,9 @@ module.exports = {
   ** Customize the progress bar color
   */
   loading: { color: '#3B8070' },
+  modules: [
+    '@nuxtjs/font-awesome'
+  ],
   /*
   ** Build configuration
   */
@@ -49,7 +52,6 @@ module.exports = {
   // include bootstrap css
   css: [
     'bootstrap/dist/css/bootstrap.css',
-    'font-awesome/css/font-awesome.css',
     'element-ui/lib/theme-chalk/index.css',
     '~/css/main.css'
   ],
