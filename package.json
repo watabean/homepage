@@ -17,8 +17,7 @@
     "bootstrap": "^3.3.7",
     "element-ui": "^2.0.8",
     "jquery": "^3.2.1",
-    "node-sass": "^4.7.2",
-    "nuxt": "^1.0.0",
+    "nuxt": "^1.1.1",
     "popper": "^1.0.1"
   },
   "devDependencies": {
@@ -32,7 +31,6 @@
     "eslint-plugin-promise": "^3.5.0",
     "eslint-plugin-standard": "^3.0.1",
     "node-sass": "^4.7.2",
-    "sass-loader": "^6.0.6",
-    "vue": "^2.5.13"
+    "sass-loader": "^6.0.6"
   }
 }
